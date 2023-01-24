@@ -13,7 +13,7 @@ module.exports = {
         yellow: "#FDCC49",
         gray: "#EDEDED",
         "deep-blue": "#010026",
-        "dark-gray": "#757575",
+        "dark-grey": "#757575",
         "opaque-black": "rgba(0,0,0,0.35)"
       },
       backgroundImage: (theme) => ({
@@ -24,7 +24,7 @@ module.exports = {
       }),
       fontFamily: {
         playfair: ["Playfair Display", "serif"],
-        opensans: ["Open Sans", "sans_serif"]
+        opensans: ["Open Sans", "sans-serif"]
       },
       content: {
         brush: "url('./assets/brush.png')",
