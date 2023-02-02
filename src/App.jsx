@@ -1,11 +1,14 @@
-import MySkills from './components/MySkills'
-import LineGradient from './components/LineGradient'
+import MySkills from "./components/MySkills";
+import LineGradient from "./components/LineGradient";
 import Navbar from "./scenes/Navbar";
 import DotGroup from "./scenes/DotGroup";
-import Landing from './scenes/Landing'
+import Landing from "./scenes/Landing";
 import { useEffect, useState } from "react";
 import useMediaQuery from "./hooks/useMediaQuery";
-import Projects from './scenes/Projects';
+import Projects from "./scenes/Projects";
+import Testimonials from "./scenes/Testimonials";
+import Contact from "./scenes/Contact";
+import Foorter from "./scenes/Foorter";
 
 function App() {
   const [selectedPage, setSelectedPage] = useState("home");
@@ -16,9 +19,9 @@ function App() {
     const handleScroll = () => {
       if (window.scrollY === 0) setIsTopOfPage(true);
       if (window.scrollY !== 0) setIsTopOfPage(false);
-    }
+    };
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -30,21 +33,30 @@ function App() {
       />
       <div className="w-5/6 mx-auto md:h-full">
         {isAboveMediumScreens && (
-          <DotGroup 
-          selectedPage={selectedPage}
-          setSelectedPage={setSelectedPage}
+          <DotGroup
+            selectedPage={selectedPage}
+            setSelectedPage={setSelectedPage}
           />
         )}
-      <Landing setSelectedPage={setSelectedPage} />  
+        <Landing setSelectedPage={setSelectedPage} />
       </div>
-      <LineGradient/>
-      <div className='w-5/6 mx-auto md:h-full'>
-          <MySkills/>
+      <LineGradient />
+      <div className="w-5/6 mx-auto md:h-full">
+        <MySkills />
       </div>
-      <LineGradient/>
-      <div className='w-5/6 mx-auto'>
-          <Projects/>
+      <LineGradient />
+      <div className="w-5/6 mx-auto">
+        <Projects />
       </div>
+      <LineGradient />
+      <div className="w-5/6 mx-auto md:h-full">
+        <Testimonials />
+      </div>
+      <LineGradient />
+      <div className="w-5/6 mx-auto md:h-full">
+        <Contact/>
+      </div>
+      <Foorter />
     </div>
   );
 }
